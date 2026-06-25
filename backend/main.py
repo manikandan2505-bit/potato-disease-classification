@@ -3,6 +3,8 @@ from fastapi.middleware.cors import CORSMiddleware
 
 import tensorflow as tf
 import numpy as np
+import os
+import gdown
 from PIL import Image
 
 app = FastAPI()
@@ -15,7 +17,17 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-model = tf.keras.models.load_model("potato_model.keras")
+MODEL_PATH = "potato_model.keras"
+
+if not os.path.exists(MODEL_PATH):
+    print("Downloading model...")
+    gdown.download(
+        id="1yYkRWcQ6e-NXRCyjFz8mhxJuGWLtuP5q",
+        output=MODEL_PATH,
+        quiet=False
+    )
+
+model = tf.keras.models.load_model(MODEL_PATH)
 
 CLASS_NAMES = [
     "Potato___Early_blight",
