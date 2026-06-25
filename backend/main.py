@@ -27,7 +27,7 @@ if not os.path.exists(MODEL_PATH):
         quiet=False
     )
 
-model = tf.keras.models.load_model(MODEL_PATH)
+model = None
 
 CLASS_NAMES = [
     "Potato___Early_blight",
@@ -35,6 +35,14 @@ CLASS_NAMES = [
     "Potato___healthy"
 ]
 
+def get_model():
+    global model
+
+    if model is None:
+        print("Loading TensorFlow model...")
+        model = tf.keras.models.load_model(MODEL_PATH)
+
+    return model
 
 @app.get("/")
 def home():
@@ -61,9 +69,9 @@ async def predict(
         axis=0
     )
 
-    predictions = model.predict(
-        img_array
-    )
+    predictions = get_model().predict(img_array)
+    
+    
 
     predicted_class = CLASS_NAMES[
         np.argmax(predictions[0])
