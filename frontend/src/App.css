@@ -1,0 +1,62 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(
+    135deg,
+    #1b5e20,
+    #388e3c,
+    #81c784
+  );
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 700px;
+  margin: 50px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+h1 {
+  color: #1b5e20;
+  margin-bottom: 20px;
+}
+
+input[type="file"] {
+  margin: 20px 0;
+}
+
+button {
+  background: #2e7d32;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #1b5e20;
+}
+
+.result-card {
+  margin-top: 30px;
+  padding: 20px;
+  border-radius: 15px;
+  background: #f1f8e9;
+  text-align: left;
+}
+
+.result-card h2 {
+  color: #2e7d32;
+}
+
+.result-card p {
+  font-size: 16px;
+  line-height: 1.6;
+}

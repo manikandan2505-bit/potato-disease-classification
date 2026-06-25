@@ -1,0 +1,8 @@
+backend/venv/
+frontend/node_modules/
+backend/potato_model.keras
+__pycache__/
+*.pyc
+.env
+.vscode/
+.idea/
