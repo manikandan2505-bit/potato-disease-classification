@@ -40,7 +40,7 @@ function App() {
     try {
 
   const response = await axios.post(
-    "http://127.0.0.1:8000/predict",
+    "https://potato-disease-classification-production-e13b.up.railway.app/predict",
     formData
   );
 
