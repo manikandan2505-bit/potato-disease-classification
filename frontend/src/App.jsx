@@ -40,8 +40,8 @@ function App() {
     try {
 
   const response = await axios.post(
-    "https://potato-disease-classification-production-e13b.up.railway.app/predict",
-    formData
+     `${import.meta.env.VITE_API_URL}/predict`,
+      formData
   );
 
   setResult(response.data);
